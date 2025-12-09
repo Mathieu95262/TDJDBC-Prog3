@@ -17,7 +17,6 @@ public class DataRetriever {
         this.db = db;
     }
 
-    // 1. Lire toutes les catégories
     public List<Category> getAllCategories() {
         List<Category> list = new ArrayList<>();
         String sql = "SELECT * FROM product_category";
@@ -40,7 +39,7 @@ public class DataRetriever {
         return list;
     }
 
-    // 2. Pagination
+    // Pagination
     public List<Product> getProductList(int page, int size) {
         List<Product> list = new ArrayList<>();
         int offset = (page - 1) * size;
@@ -71,7 +70,7 @@ public class DataRetriever {
         return list;
     }
 
-    // 3. Filtres multi-critères
+    // Filtres
     public List<Product> getProductsByCriteria(
             String productName,
             String categoryName,
@@ -133,7 +132,7 @@ public class DataRetriever {
         return list;
     }
 
-    // 4. Filtres + pagination
+    // Filtres + pagination
     public List<Product> getProductsByCriteria(
             String productName,
             String categoryName,
